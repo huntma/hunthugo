@@ -1,0 +1,18 @@
+{{partial "header.html" .}}
+	<h1>Hunt Ma</h1>
+	<p>Learn stuff fast</p>
+	<h2>Articles</h2>
+	{{- range first 10 .Data.Pages}}
+		{{- if eq .Type "article"}}
+		<h4><a href="{{.Permalink}}">{{.Title}}</a></h4>
+		{{- end}}
+	{{- end}}
+	<h2>Pages</h2>
+	{{- range first 10 .Data.Pages}}
+		{{- if eq .Type "page"}}
+		<h4><a href="{{.Permalink}}">{{.Title}}</a></h4>
+		{{- end}}
+	{{- end}}
+
+</body>
+</html>

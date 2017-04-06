@@ -1,0 +1,5 @@
+languageCode = "en-us"
+title = "Hunt Ma"
+baseURL = "http://huntma.github.io"
+theme = "Hyde"
+description = "Helloooo Internet Traveller!"
