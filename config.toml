@@ -1,5 +1,5 @@
 languageCode = "en-us"
 title = "Hunt Ma"
-baseURL = "http://huntma.github.io/"
-theme = "Hyde"
+baseURL = "https://huntma.github.io/"
+theme = ""
 description = "Helloooo Internet Traveller!"
