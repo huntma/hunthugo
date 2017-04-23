@@ -8,7 +8,8 @@ date = "2017-04-18T15:46:31-07:00"
 
 +++
 
-# Create Your Own Website and How to Edit it
+# Tutorial for a Personal Website
+### _For Absolute Beginners_
 <br>
 <br>
 <br>
@@ -61,63 +62,43 @@ Create new file and name it "index.html".
 _More info_
 > index.html is a weird name. Why? Because when the browser is looking for html files to generate the page, it is in the standard to look for this specific name.
 
-2. Brick by Brick.
+### Overview of the Web
+
+Any monkey can learn to make a website. It won't understand how it all works though. We are not monkeys.
+
+All website live somewhere. It will be on a computer that is connected to the internet.
+
+That computer has a program that can serve the site to people who request it. Hence servers.
+
+Each of these computers has an address, like every house has an address. A domain name is the nickname for it. For example "google.com" instead of "8.8.8.8". Continuing the analogy, that's like calling your house "home" instead of 330 De Neve Dr. Los Angeles, CA 90024.
+
+For us today, our website is going to live on Github's servers.
+<br>
+
+### HTML & CSS
+Hyper Text - Meaning words can be hyperlinks
+Markup Language - A language to mark things up or annotate.
+
+Cascaded Style Sheets - the syle of the content
+
+Imagine you have a rich electronic document with images, colors, cool fonts, and an amazing layout. Wow, a graphic designer probably made this. How would you represent it electronically though?
+
+We could use a PDF or a Word document. Sure. But the web uses HTML and CSS which are lighter (in file size).
+
+Start with plain text. We now have the same words as on our doc.
+
+Our doc has very diverse content though. It has a header, title, images, and different sections. Use HTML (which uses tags like <p>blah</p>) to mark sections of plain text.
+
+We have now told the software (chrome, firefox, ie) what kind of words we have. Use CSS to tell it how to display these words. Color, font, placement, size, etc.
+<br>
+
+### Brick by Brick.
 
 We will build one piece of our website at a time.
 
 Copy this template
 
 ```
-<!DOCTYPE html>
-<html>
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <!--Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>Abouts &middot; Hunt Ma</title>
-  
-  <link rel="stylesheet" href="https://huntma.github.io/css/poole.css">
-  <link rel="stylesheet" href="https://huntma.github.io/css/syntax.css">
-  <link rel="stylesheet" href="https://huntma.github.io/css/hyde.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/favicon.png">
-
-  
-  <link href="https://huntma.github.io/about/index.xml" rel="alternate" type="application/rss+xml" title="Hunt Ma" />
-</head>
-
-<body class=" ">
-
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="https://huntma.github.io/"><h1>Hunt Ma</h1></a>
-      <p class="lead">
-	  Helloooo. This site is for learning. Complete, accurate, to-the-point information.
-      </p>
-    </div>
-
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
-      <li><a href="/about">About</a> </li>
-      <li><a href="/post">Posts</a> </li>
-
-    </ul>
-
-    <p>&copy; 2017. All rights reserved. </p>
-  </div>
-</div>
-  <div class="content container">
-  [insert quick blurb about yourself]
-  </div>
-</body>
-</html>
 ```
 
 3. Fill in Information.

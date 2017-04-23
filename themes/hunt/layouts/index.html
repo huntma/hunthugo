@@ -1,0 +1,51 @@
+{{ partial "header.html" . }}
+<body>
+
+{{ partial "navbar.html" . }}
+
+<div class="container">
+
+<div class="jumbotron background">
+	<div class="container">
+		<h1>Welcome to hunt.</h1>
+		<p>This is a hugo theme that uses bootstrap and is well commented.</p>
+		<br>
+		<p><a class="btn btn-primary btn-lg" href="#" role="button">Button!</a></p>
+	</div>
+</div>
+
+<div class="container front-page">
+	<div class="row">
+		<div class="col-md-4">
+			<a href="/about">
+			<div class="clickable">
+			<span class="glyphicon glyphicon-cloud glyphicon-large" aria-hidden="true"></span>
+			<h3>About</h3>
+			<p>In summary, it's about learning efficiently.</p>
+			</div>
+			</a>
+		</div>
+		<div class="col-md-4">
+		  <a href="/post/">
+			<div class="clickable">
+			<span class="glyphicon glyphicon-pencil glyphicon-large" aria-hidden="true"></span>
+			<h3>Posts</h3>
+			<p>Posts about any topic.</p>
+			</div>
+			</a>
+		</div>
+		</a>
+		<div class="col-md-4">
+			<a href="#">
+			<div class="clickable">
+			<span class="glyphicon glyphicon-plus glyphicon-large" aria-hidden="true"></span>
+			<h3>Projects</h3>
+			<p>Check out my projects.</p>
+			</div>
+			</a>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+{{ partial "footer.html" . }}
