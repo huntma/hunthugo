@@ -12,7 +12,7 @@
 		{{ else }}
 		<title>{{ .Title }} &middot; {{ .Site.Title }}</title> {{end}}
 
-		<link href="/css/bootstrap.min.css" rel="stylesheet">
-		<link href="/css/hunt.css" rel="stylesheet">
-		<link href="/css/prism.css" rel="stylesheet" />
+		<link href="{{.Site.BaseURL}}css/bootstrap.min.css" rel="stylesheet">
+		<link href="{{.Site.BaseURL}}css/hunt.css" rel="stylesheet">
+		<link href="{{.Site.BaseURL}}css/prism.css" rel="stylesheet">
 	</head>

@@ -79,7 +79,7 @@ For us today, our website is going to live on Github's servers.
 Hyper Text - Meaning words can be hyperlinks
 Markup Language - A language to mark things up or annotate.
 
-Cascaded Style Sheets - the syle of the content
+Cascaded Style Sheets - the style of the content
 
 _CSS_  
 It is called cascaded because the order of them matters. Later ones will override previous ones which is useful for customizing. Say you use one of many premade CSS. Then you can change little things with just your own CSS. No need to go into their code. 
@@ -142,8 +142,8 @@ h1 {
 }
 
 .big {
-	height: 100%;
-	width: 100%;
+	color: blue;
+	font-family: monospace;
 }
 ~~~
 
@@ -159,20 +159,24 @@ Just know there are different selectors and ways to mix them to target specific 
 
 3. Create folder mySite in convenient location.
 
-4. Make "index.html" in it.
+4. Make html "index.html" in it.
 
-5. Get path "index.html"  and put into address bar of browser to view site.
+5. Get path of "index.html" and put into address bar of browser to view site or you can drag the file to your browser.
 
 6. Change your site.
 
 7. Refresh the page.
+
+It will look like this
+
+![](/image/170423web0)
 
 <br>
 ### Basics.
 
 One piece at a time.
 
-Copy this template into "index.html"
+Copy this template into "index.html". Edit the html file with any text editor.
 
 ~~~html
 <!DOCTYPE html>
@@ -183,6 +187,7 @@ Copy this template into "index.html"
 
 <body>
 	<!-- content goes here -->
+	Hello
 </body>
 
 </html>
@@ -196,9 +201,9 @@ _More info_
 
 ### Get Bootstrap
 
-Bootstrap is CSS. The best feature is they make your website display properly on different device sizes.
+Bootstrap is premade CSS. The best feature is they make your website display properly on different device sizes.
 
-Add this to head
+Add the following code inside the `<head>` tags.
 ~~~html
 <head>
 	<meta charset="utf-8">
@@ -207,8 +212,8 @@ Add this to head
 
 	<title>[title of website]</title>
 
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/mycustom.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/mycustom.css" rel="stylesheet">
 </head>
 ~~~
 
@@ -220,17 +225,26 @@ _More info_
 
 > Our custom is below bootstrap so that it will override. HTML docs are parsed from top to bottom so the latest CSS rules will prevail.
 > "min" only means minified which means it has been compressed to make it smaller so the website can load faster.
+> The paths we have on right now are relative to the root of our site.
 
-Go on bootstraps website and download the CSS file. Put it in "[path to mySite]/css/".
+Go on bootstrap website and download bootstrap. You don't need the source, it just has extras.
 
-Also make a custom CSS file and put it in the same folder.
+Find "bootstrap.min.css" and put it in "[path to mySite]/css/". That means make a folder called css in [mySite] and put the .css file into it.
 
-We also need to add bootstrap javascript and jQuery. Add the following right before </html>.
+Also make a file called "mycustom.css" and put it in the same folder.
+
+We also need to add bootstrap javascript and jQuery. Add the following right before the `</html>` tag in your "index.html".
 
 ~~~html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 ~~~
+
+Then go into the Bootstrap file you downloaded and copy "bootstrap.min.js" into "[mySite]/js/"
+
+It should look like this
+
+![](/image/170423web1)
 
 _More info_
 
@@ -256,7 +270,7 @@ Let's use an altered version of the Navbar example from Bootstrap that was inspi
 			</div>
 		<div class="collapse navbar-collapse" id="nav-example-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href='/about'>About</a><li>
+				<li><a href='about'>About</a><li>
 
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects<span class="caret"></span></a>	
@@ -278,10 +292,32 @@ It looks like a lot. But not that bad. Let's break it down.
 _More info_
 
 > The 'a' tags are links. 'href' says where to link to. We have link to places in our website that we have not created yet. "#" or '#' (doesen't matter) is a placeholder. It doesn't link to anywhere.
+
 > 404's happen when links point to things that don't exist. Like we are linking to about, but we haven't created one.
+
+> Another note about linking. Notice our paths are written absolute here. This is because the navbar will be on every page, so you can't do relative paths. The leading '/' means that it will start from the base directory. This won't work on local because the root will be the C:/ drive probably. When it is uploaded onto Github, it will work though. 
+
 > All the weird classes are just key-value pairs. Like class="collapse" means that it is part of the collapse class. This doesn't mean anything by itself. Bootstrap has defined what that means for us in its css and js files.
 
+> Notice for the nave we are writing absolute paths from the root '/'. This is important because the navbar will be on every page so we can't put relative paths. They won't be correct on every page.
+
 Actually Tania Rascia breaks it down quite well. [Tania's Site](https://www.taniarascia.com/what-is-bootstrap-and-how-do-i-use-it/).
+
+### Jumbotron
+
+Jumbotron is like a big ad. Many people use one. Add this into the `<body>` tags.
+
+~~~html
+<div class="jumbotron background">
+	<div class="container">
+		<h1>Welcome to hunt.</h1>
+		<p>This is a hugo theme that uses bootstrap and is well commented.</p>
+		<br>
+		<p><a class="btn btn-primary btn-lg" href="#" role="button">Button!</a></p>
+	</div>
+</div>
+~~~
+<br>
 
 ### Front page grid
 
@@ -289,7 +325,7 @@ In bootstrap you use rows that contain columns to organize.
 
 It is separated into 12 cols.
 
-Put this into body.
+Put this into the `<body>` tags of "index.html".
 
 
 ~~~html
@@ -320,31 +356,19 @@ _More info_
 
 > col-md-4 is kind of confusing. 'md' means that for medium sized screens, the browser will look for any class with 'md' in it and display that.
 > There are
-	* xs  
-	* sm
-	* md
-	* lg
-	* xl
+>	* xs  
+>	* sm
+>	* md
+>	* lg
+>	* xl
 
 Tania gives a good explanation too.
 
 ### Add clickable boxes.
 
-We make the whole div a link.
+We make each `<div class="col-md-4">` a clickable link.
 
-~~~html
-<div class="col-md-4">
-	<a href="/about">
-		<div class="clickable">
-			<span class="glyphicon glyphicon-cloud glyphicon-large" aria-hidden="true"></span>
-			<h3>About</h3>
-			<p>In summary, it's about learning efficiently.</p>
-		</div>
-	</a>
-</div>
-~~~
-
-This messes up the color though, so add this to CSS
+This messes up the color though, so add this to "mycustom.css".
 
 ~~~css
 /*clickable-box class properties*/
@@ -363,7 +387,7 @@ So then overall it will look like this.
 <div class="container front-page">
 	<div class="row">
 		<div class="col-md-4">
-			<a href="/about">
+			<a href="about">
 				<div class="clickable">
 					<span class="glyphicon glyphicon-cloud glyphicon-large" aria-hidden="true"></span>
 					<h3>About</h3>
@@ -372,23 +396,21 @@ So then overall it will look like this.
 			</a>
 		</div>
 		<div class="col-md-4">
-		  <a href="/post/">
+		  <a href="post">
 				<div class="clickable">
 					<span class="glyphicon glyphicon-pencil glyphicon-large" aria-hidden="true"></span>
 					<h3>Posts</h3>
 					<p>Posts about any topic.</p>
 				</div>
 			</a>
-			</div>
-			</a>
 		</div>
 		<div class="col-md-4">
 			<a href="#">
 				<div class="clickable">
-				<span class="glyphicon glyphicon-plus glyphicon-large" aria-hidden="true"></span>
-				<h3>Projects</h3>
-				<p>Check out my projects.</p>
-			</div>
+					<span class="glyphicon glyphicon-plus glyphicon-large" aria-hidden="true"></span>
+					<h3>Projects</h3>
+					<p>Check out my projects.</p>
+				</div>
 			</a>
 		</div>
 	</div>
@@ -396,6 +418,8 @@ So then overall it will look like this.
 ~~~~
 
 ### Some More Styling
+
+Put all of this into "mycustom.css". Remember we want to override bootstrap's css.
 
 Get rid of the spacing at the bottom of the navbar.
 ~~~css
@@ -518,10 +542,10 @@ Notice we already had glyhpicon-large class. Aria-hidden is just a property that
 
 Put your resume in "[mySite]/file/"
 
-This line in the nav is what links it and it is already in the "index.html".
+This line in the nav is what links it and it is already in the "index.html". Make it link to the name of your resume.
 
 ~~~~html
-<li><a href='/file/[myResume].pdf'>Resume</a><li>
+<li><a href='file/[myResume].pdf'>Resume</a><li>
 ~~~~
 
 <br>
@@ -544,8 +568,8 @@ If you want to add cool posts about projects. Put those in "[mySite]/post/". Not
 	
 		<title>About Me</title> 
 
-		<link href="/css/bootstrap.min.css" rel="stylesheet">
-		<link href="/css/mycustom.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/mycustom.css" rel="stylesheet">
 	</head>
 
 <body>
@@ -574,7 +598,7 @@ If you want to add cool posts about projects. Put those in "[mySite]/post/". Not
 					</ul>
 				</li>
 				<li><a href='/post'>Posts</a><li>
-				<li><a href='[myResume].pdf'>Resume</a><li>
+				<li><a href='/file/[myResume].pdf'>Resume</a><li>
 			</ul>
 		</div>
 	</div>
@@ -592,7 +616,7 @@ If you want to add cool posts about projects. Put those in "[mySite]/post/". Not
 </body>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </html>
 ~~~
 
