@@ -57,7 +57,7 @@ h2 {
 }
 
 /* li's of the dropdown of navbar */
-.navbar-inverse .navbar-nav .dropdown-menu li a:hover {
+.dropdown-menu li a:hover {
 	background: #2C463C;
 }
 
